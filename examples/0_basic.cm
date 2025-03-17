@@ -6,7 +6,7 @@ int main() {
 	// executed, and replaced with its output.
 	// This meta block expects a numeric argument, so provide it in meta-args.
 	// E.g. 
-	//    cpc 0_basic.cm -- -- 69420
+	//    cpc 0_basic.cm cmb 69420
 	int value = $$
 		assert(argc == 2);
 		printf("%s", argv[1]);
