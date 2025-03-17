@@ -1,0 +1,9 @@
+.cpc/
+.vs/
+*.obj
+*.exe
+*.exe.old
+*.ilk
+*.pdb
+examples/*.c
+*.sln

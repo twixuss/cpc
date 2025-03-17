@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+#define NOB_IMPLEMENTATION
+#define NOB_STRIP_PREFIX
+#include "../nob.h"
+
+@@
+// ^ This is "share" meta-token.
+// Everything before it will be included in the following meta blocks
+// as well as resulting program.
+char data[] = {$$
+	String_Builder sb = {0};
+	read_entire_file(__FILE__, &sb);
+	for (size_t i = 0; i < sb.count; ++i)
+		printf("%d,", sb.items[i]);
+$$};
+
+int main() {
+	printf("%s", data);
+}

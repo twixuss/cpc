@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+	// Meta block can start with parameters.
+	// Write a name, = immediatley after, the rest until \n is the value.
+	//
+	// WRAP overrides default wrapping of the meta block.
+	// This wrap will additionally print five nines.
+	int value = $$WRAP=examples/custom.wrap
+		assert(argc == 2);
+		printf("%s", argv[1]);
+	$$;
+
+	printf("value is %d\n", value);
+}

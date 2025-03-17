@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+	// cpc introduces $$ meta-tokens.
+	// Code between them will be put into its own file inside main,
+	// executed, and replaced with its output.
+	// This meta block expects a numeric argument, so provide it in meta-args.
+	// E.g. 
+	//    cpc 0_basic.cm -- -- 69420
+	int value = $$
+		assert(argc == 2);
+		printf("%s", argv[1]);
+	$$;
+
+	printf("value is %d\n", value);
+}
